@@ -13,7 +13,7 @@ function Prodact() {
     const URL = `https://69e35b7f3327837a15530f71.mockapi.io/prodact/${productId}`
 
     useEffect(() => {
-        const getSingleProduct = async () => {
+        const getProduct = async () => {
             try {
                 const res = await axios.get(URL);
                 setProdact(res.data);
@@ -21,7 +21,7 @@ function Prodact() {
                 console.log("Xatolik:", error);
             }
         };
-        getSingleProduct();
+        getProduct();
     }, [productId]);
 
     return (
