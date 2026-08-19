@@ -4,7 +4,6 @@ import { PlusCircle, Trash2 } from 'lucide-react';
 import Sidebars from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 
-// Cament yozib organaylikchi qanday bolar ekan😉
 
 
 function Admin() {
@@ -16,7 +15,6 @@ function Admin() {
     const usersApi = 'https://69e352593327837a15530547.mockapi.io/users' //users api
 
 
-    //  useEfect 
 
     useEffect(() => {
         const users = async () => {
@@ -34,14 +32,10 @@ function Admin() {
         fetchProducts();
     }, []);
 
-    //Jami prodact narxini olyotirmon
     const totalProdact = products.reduce((sum, item) => sum + Number(item.price), 0);
-    //Prodactlar soni
     const totalNextProdact = products.length;
-    //Userlar soni
     const user = users.length;
 
-    //qisqasi prodact delete funk
     const deleteProduct = async (id) => {
 
         try {
@@ -56,13 +50,10 @@ function Admin() {
 
     return (
         <div className="flex min-h-screen bg-slate-900 text-slate-100">
-            {/* SideBar bolimi  */}
             <Sidebars />
 
-            {/* Qisqasi SideBar tugadi endi Menu */}
             <menu className="flex-1 p-8 overflow-y-auto relative menu">
 
-                {/* Maxsulot va User xaqida qisqacha ma`lumot */}
                 <div className="flex justify-between items-center mb-8">
                     <div>
                         <h2 className="text-3xl font-bold">Mahsulotlar boshqaruvi</h2>
@@ -86,11 +77,9 @@ function Admin() {
                     </div>
                 </div>
 
-                {/* Maxsulotlar jamlanmasi */}
                 <div className='bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden'>
                     <div className="w-full text-left">
 
-                        {/* Maxsulot malumoti */}
                         <div className="bg-slate-900/50 h-16 text-slate-400 text-sm border-b border-slate-800">
                             <div className='flex justify-between text-center items-center'>
                                 <div className='flex gap-6'>
@@ -103,7 +92,6 @@ function Admin() {
                                 </div>
                             </div>
                         </div>
-                        {/* Maxsulotlar */}
                         <div className=" ">
                             {products.map((p) => (
                                 <div key={p.id} className="flex text-center items-center justify-between hover:bg-slate-900/30 transition border border-gray-800 rounded-sm">
